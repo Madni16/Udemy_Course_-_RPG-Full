@@ -4,19 +4,20 @@ public class Player : MonoBehaviour
 {
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
-
-    private PlayerInputSet input;
+    public PlayerInputSet input { get; private set; }
     private StateMachine stateMachine;
 
     public Player_IdleState IdleState { get; private set; }
     public Player_MoveState MoveState { get; private set; }
+    public Player_JumpState JumpState { get; private set; }
+    public Player_FallState FallState { get; private set; }
 
-    public Vector2 moveInput { get; private set; }
 
     [Header("Movement details")]
     public float moveSpeed;
-
+    public float jumpForce = 5f;
     private bool facingRight = true;
+    public Vector2 moveInput { get; private set; }
 
     private void Awake()
     {
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
 
         IdleState = new Player_IdleState(this, stateMachine, "idle");
         MoveState = new Player_MoveState(this, stateMachine, "move");
+        JumpState = new Player_JumpState(this, stateMachine, "jumpFall");
+        FallState = new Player_FallState(this, stateMachine, "jumpFall");
     }
 
     private void OnEnable()
@@ -62,9 +65,9 @@ public class Player : MonoBehaviour
 
     private void HandleFlip(float xVelocity)
     {
-        if(xVelocity > 0 && !facingRight)
-            Flip();        
-        else if(xVelocity < 0 && facingRight)
+        if (xVelocity > 0 && !facingRight)
+            Flip();
+        else if (xVelocity < 0 && facingRight)
             Flip();
     }
 
