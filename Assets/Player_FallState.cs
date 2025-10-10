@@ -1,4 +1,4 @@
-public class Player_FallState : EntityState
+public class Player_FallState : Player_AirborneState
 {
     public Player_FallState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -8,6 +8,7 @@ public class Player_FallState : EntityState
     {
         base.Update();
 
-        // If player is detecting the ground below - if yes, go to idle state
+        if (player.groundDetected)
+            stateMachine.ChangeState(player.IdleState);
     }
 }
