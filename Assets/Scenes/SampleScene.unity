@@ -288,6 +288,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveSpeed: 8
+  jumpForce: 5
+  groundCheckDistance: 1.4
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  groundDetected: 0
 --- !u!4 &549754520
 Transform:
   m_ObjectHideFlags: 0
@@ -297,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 549754518}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.74, y: -2.05, z: 0}
+  m_LocalPosition: {x: 4.74, y: -2.189, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -338,8 +344,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.025647879, y: -0.28212726}
-  m_Size: {x: 0.7638078, y: 2.0918696}
+  m_Offset: {x: 0, y: -0.285}
+  m_Size: {x: 0.77, y: 2.095}
   m_Direction: 0
 --- !u!50 &549754522
 Rigidbody2D:
@@ -576,7 +582,7 @@ GameObject:
   - component: {fileID: 1414597383}
   - component: {fileID: 1414597382}
   - component: {fileID: 1414597381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
