@@ -17,8 +17,9 @@ public class Player : MonoBehaviour
     public Player_BasicAttackState BasicAttackState { get; private set; }
 
     [Header("Attack details")]
-    public Vector2 attackVelocity;
+    public Vector2[] attackVelocity;
     public float attackVelocityDuration = .1f;
+    public float comboWindowDuration = .5f;
 
     [Header("Movement details")]
     public float moveSpeed = 8f;
