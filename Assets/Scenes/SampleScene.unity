@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &40782003
 Transform:
   m_ObjectHideFlags: 0
@@ -566,6 +566,8 @@ MonoBehaviour:
   wallJumpForce: {x: 6, y: 12}
   airSpeedMultiplier: 0.8
   wallSlideMultiplier: 0.3
+  dashDuration: 0.25
+  dashSpeed: 20
   groundCheckDistance: 1.33
   wallCheckDistance: 0.4
   groundLayer:
@@ -580,7 +582,7 @@ Transform:
   m_GameObject: {fileID: 549754518}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.543, y: -2.198, z: 0}
+  m_LocalPosition: {x: -3.48, y: 3.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
