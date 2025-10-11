@@ -563,7 +563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveSpeed: 8
   jumpForce: 12
-  airSpeedMultiplier: 0.809
+  wallJumpForce: {x: 6, y: 12}
+  airSpeedMultiplier: 0.8
   wallSlideMultiplier: 0.3
   groundCheckDistance: 1.33
   wallCheckDistance: 0.4
