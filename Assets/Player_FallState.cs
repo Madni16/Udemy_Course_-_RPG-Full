@@ -10,5 +10,8 @@ public class Player_FallState : Player_AirborneState
 
         if (player.groundDetected)
             stateMachine.ChangeState(player.IdleState);
+
+        if (player.wallDetected && player.moveInput.x != 0)
+            stateMachine.ChangeState(player.WallSlideState);
     }
 }
