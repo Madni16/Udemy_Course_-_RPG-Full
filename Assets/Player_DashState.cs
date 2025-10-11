@@ -10,10 +10,7 @@ public class Player_DashState : EntityState
     {
         base.Enter();
 
-        if (player.moveInput.x != 0)
-            dashDir = player.moveInput.x;
-        else
-            dashDir = player.facingDir;
+        dashDir = player.moveInput.x != 0 ? ((int)player.moveInput.x) : player.facingDir;
 
         stateTimer = player.dashDuration;
 
