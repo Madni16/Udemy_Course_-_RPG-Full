@@ -13,15 +13,22 @@ public class Player : MonoBehaviour
     public Player_FallState FallState { get; private set; }
     public Player_WallSlideState WallSlideState { get; private set; }
     public Player_WallJumpState WallJumpState { get; private set; }
+    public Player_DashState DashState { get; private set; }
 
     [Header("Movement details")]
     public float moveSpeed = 8f;
     public float jumpForce = 12f;
     public Vector2 wallJumpForce;
+
     [Range(0, 1)]
     public float airSpeedMultiplier = 0.8f;
     [Range(0, 1)]
     public float wallSlideMultiplier = 0.3f;
+    [Space]
+    public float dashDuration = .25f;
+    public float dashSpeed = 20f;
+
+
     private bool facingRight = true;
     public int facingDir { get; private set; } = 1;
     public Vector2 moveInput { get; private set; }
@@ -48,6 +55,7 @@ public class Player : MonoBehaviour
         FallState = new Player_FallState(this, stateMachine, "jumpFall");
         WallSlideState = new Player_WallSlideState(this, stateMachine, "wallSlide");
         WallJumpState = new Player_WallJumpState(this, stateMachine, "jumpFall");
+        DashState = new Player_DashState(this, stateMachine, "dash");
     }
 
     private void OnEnable()
