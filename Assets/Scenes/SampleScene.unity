@@ -43037,6 +43037,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ba6d0395bb14541ae0a4e1b67ede13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  groundCheckDistance: 1.33
+  wallCheckDistance: 0.4
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  primaryWallCheck: {fileID: 1782069649}
+  secondaryWallCheck: {fileID: 1784613831}
   attackVelocity:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
@@ -43051,13 +43058,6 @@ MonoBehaviour:
   wallSlideMultiplier: 0.3
   dashDuration: 0.25
   dashSpeed: 20
-  groundCheckDistance: 1.33
-  wallCheckDistance: 0.4
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  primaryWallCheck: {fileID: 1782069649}
-  secondaryWallCheck: {fileID: 1784613831}
 --- !u!4 &549754520
 Transform:
   m_ObjectHideFlags: 0
