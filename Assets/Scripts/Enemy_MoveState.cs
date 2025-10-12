@@ -1,4 +1,4 @@
-public class Enemy_MoveState : EnemyState
+public class Enemy_MoveState : Enemy_PatrolState
 {
     public Enemy_MoveState(Enemy enemy, StateMachine statemachine, string animBoolName) : base(enemy, statemachine, animBoolName)
     {
@@ -19,7 +19,7 @@ public class Enemy_MoveState : EnemyState
         enemy.SetVelocity(enemy.moveSpeed * enemy.facingDir, rb.linearVelocity.y);
 
         if (!enemy.groundDetected || enemy.wallDetected)
-            stateMachine.ChangeState(enemy.IdleState);        
+            stateMachine.ChangeState(enemy.IdleState);
     }
 }
 
