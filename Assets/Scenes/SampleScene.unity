@@ -43018,6 +43018,7 @@ GameObject:
   - component: {fileID: 549754519}
   - component: {fileID: 549754523}
   - component: {fileID: 549754524}
+  - component: {fileID: 549754525}
   - component: {fileID: 549754522}
   - component: {fileID: 549754521}
   m_Layer: 7
@@ -43176,6 +43177,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Health
   maxHealth: 100
   isDead: 0
+--- !u!114 &549754525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549754518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb2e201306c00c44aa3531eadc260f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_VFX
+  onDamageMaterial: {fileID: 2100000, guid: fffce2453109b5549b4942baa7d25860, type: 2}
+  onDamageVfxDuration: 0.15
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -52042,6 +52057,7 @@ GameObject:
   - component: {fileID: 1881161687}
   - component: {fileID: 1881161689}
   - component: {fileID: 1881161690}
+  - component: {fileID: 1881161691}
   - component: {fileID: 1881161686}
   - component: {fileID: 1881161685}
   m_Layer: 8
@@ -52198,6 +52214,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Health
   maxHealth: 100
   isDead: 0
+--- !u!114 &1881161691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881161684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb2e201306c00c44aa3531eadc260f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_VFX
+  onDamageMaterial: {fileID: 2100000, guid: fffce2453109b5549b4942baa7d25860, type: 2}
+  onDamageVfxDuration: 0.15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
