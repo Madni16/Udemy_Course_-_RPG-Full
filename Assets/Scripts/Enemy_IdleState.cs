@@ -1,4 +1,4 @@
-public class Enemy_IdleState : EnemyState
+public class Enemy_IdleState : Enemy_PatrolState
 {
     public Enemy_IdleState(Enemy enemy, StateMachine statemachine, string animBoolName) : base(enemy, statemachine, animBoolName)
     {
