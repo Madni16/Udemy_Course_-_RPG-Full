@@ -20,10 +20,28 @@ public class Enemy : Entity
     [Range(0f, 2f)]
     public float moveAnimSpeedMultiplier = 1f;
 
-    [Header("Player decetion")]
+    [Header("Player detection")]
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Transform playerCheck;
     [SerializeField] private float playerCheckDistance = 10f;
+    public Transform player { get; private set; }
+
+    public void TryEnterBattleState(Transform player)
+    {
+        if (stateMachine.currentState == BattleState || stateMachine.currentState == AttackState)
+            return;
+
+        this.player = player;
+        stateMachine.ChangeState(BattleState);
+    }
+
+    public Transform GetPlayerReference()
+    {
+        if(player == null)
+            player = PlayerDetected().transform;
+
+        return player;
+    }
 
     public RaycastHit2D PlayerDetected()
     {
