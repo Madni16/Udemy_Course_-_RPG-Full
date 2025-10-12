@@ -58,6 +58,11 @@ public class Entity : MonoBehaviour
         knockbackCoroutine = StartCoroutine(KnockbackCoroutine(knockback, duration));
     }
 
+    public virtual void EntityDeath()
+    {
+
+    }
+
     private IEnumerator KnockbackCoroutine(Vector2 knockback, float duration)
     {
         isKnocked = true;
