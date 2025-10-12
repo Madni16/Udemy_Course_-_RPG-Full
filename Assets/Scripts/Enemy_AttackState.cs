@@ -11,6 +11,6 @@ public class Enemy_AttackState : EnemyState
         base.Update();
 
         if (triggerCalled)
-            stateMachine.ChangeState(enemy.IdleState);
+            stateMachine.ChangeState(enemy.BattleState);
     }
 }
