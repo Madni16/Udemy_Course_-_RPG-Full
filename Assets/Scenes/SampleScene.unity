@@ -43016,6 +43016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 549754520}
   - component: {fileID: 549754519}
+  - component: {fileID: 549754523}
   - component: {fileID: 549754522}
   - component: {fileID: 549754521}
   m_Layer: 7
@@ -43075,6 +43076,7 @@ Transform:
   - {fileID: 1288537358}
   - {fileID: 1782069649}
   - {fileID: 1784613831}
+  - {fileID: 1396445004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &549754521
@@ -43141,6 +43143,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &549754523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549754518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87c050c3d4a52f428ed2a3426a42be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_Combat
+  targetColliders: []
+  targetCheck: {fileID: 1396445004}
+  targetCheckRadius: 1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -51318,6 +51338,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1121971319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1121971320}
+  m_Layer: 8
+  m_Name: TargetCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1121971320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121971319}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1881161688}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1224982780
 GameObject:
   m_ObjectHideFlags: 0
@@ -51534,6 +51585,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ddbfa702aa3bb408e00406d0cf5f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player_AnimationTriggers
+--- !u!1 &1396445003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396445004}
+  m_Layer: 7
+  m_Name: TargetCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1396445004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396445003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3, y: -0.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 549754520}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1410586900
 GameObject:
   m_ObjectHideFlags: 0
@@ -51943,6 +52025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1881161688}
   - component: {fileID: 1881161687}
+  - component: {fileID: 1881161689}
   - component: {fileID: 1881161686}
   - component: {fileID: 1881161685}
   m_Layer: 8
@@ -52064,8 +52147,27 @@ Transform:
   m_Children:
   - {fileID: 861325050}
   - {fileID: 1410586901}
+  - {fileID: 1121971320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881161689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881161684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87c050c3d4a52f428ed2a3426a42be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_Combat
+  targetColliders: []
+  targetCheck: {fileID: 1121971320}
+  targetCheckRadius: 1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
