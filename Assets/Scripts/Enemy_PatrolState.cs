@@ -8,7 +8,7 @@ public class Enemy_PatrolState : EnemyState
     {
         base.Update();
 
-        if (enemy.PlayerDetection())
+        if (enemy.PlayerDetected())
             stateMachine.ChangeState(enemy.BattleState);
     }
 }

@@ -19,7 +19,7 @@ public class Player : Entity
     public Vector2[] attackVelocity;
     public Vector2 jumpAttackVelocity;
     public float attackVelocityDuration = .1f;
-    public float comboWindowDuration = .5f;
+    public float comboWindowDuration = .3f;
     private Coroutine queuedAttackCoroutine;
 
     [Header("Movement details")]
