@@ -52200,7 +52200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87c050c3d4a52f428ed2a3426a42be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Combat
-  damage: 10
+  damage: 25
   targetCheck: {fileID: 1121971320}
   targetCheckRadius: 1
   targetLayer:
