@@ -12,7 +12,6 @@ public class Enemy_StunnedState : EnemyState
     {
         base.Enter();
 
-        vfx.EnableEnemyAlert(false);
         enemy.EnableCounterWindow(false);
 
         stateTimer = enemy.stunnedDuration;
@@ -24,6 +23,6 @@ public class Enemy_StunnedState : EnemyState
         base.Update();
 
         if (stateTimer < 0)
-            stateMachine.ChangeState(enemy.IdleState);
+            stateMachine.ChangeState(enemy.BattleState);
     }
 }

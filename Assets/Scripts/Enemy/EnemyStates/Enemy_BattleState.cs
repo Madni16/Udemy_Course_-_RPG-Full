@@ -4,6 +4,7 @@ public class Enemy_BattleState : EnemyState
 {
     private Transform player;
     private float lastTimeWasInBattle;
+    private bool finishedShowingAlert;
     public Enemy_BattleState(Enemy enemy, StateMachine statemachine, string animBoolName) : base(enemy, statemachine, animBoolName)
     {
     }
@@ -11,6 +12,9 @@ public class Enemy_BattleState : EnemyState
     public override void Enter()
     {
         base.Enter();
+
+        stateTimer = enemy.playerDetectionAlertDuration;
+        finishedShowingAlert = false;
 
         UpdateBattleTimer();
 
@@ -27,6 +31,12 @@ public class Enemy_BattleState : EnemyState
     public override void Update()
     {
         base.Update();
+
+        if (stateTimer < 0 && !finishedShowingAlert)
+        {
+            enemy.ToggleEnemyDetectionAlert(false);
+            finishedShowingAlert = true;
+        }
 
         if (enemy.PlayerDetected())
             UpdateBattleTimer();
