@@ -9,9 +9,6 @@ public class Enemy_PatrolState : EnemyState
         base.Update();
 
         if (enemy.PlayerDetected())
-        {
-            enemy.ToggleEnemyDetectionAlert(true);
-            stateMachine.ChangeState(enemy.BattleState);
-        }
+            stateMachine.ChangeState(enemy.BattleState);        
     }
 }

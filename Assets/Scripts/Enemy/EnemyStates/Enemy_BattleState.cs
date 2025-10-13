@@ -1,10 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy_BattleState : EnemyState
 {
     private Transform player;
     private float lastTimeWasInBattle;
-    private bool finishedShowingAlert;
     public Enemy_BattleState(Enemy enemy, StateMachine statemachine, string animBoolName) : base(enemy, statemachine, animBoolName)
     {
     }
@@ -13,8 +13,7 @@ public class Enemy_BattleState : EnemyState
     {
         base.Enter();
 
-        stateTimer = enemy.playerDetectionAlertDuration;
-        finishedShowingAlert = false;
+        enemy.ShowEnemyAlertDetection();
 
         UpdateBattleTimer();
 
@@ -32,17 +31,14 @@ public class Enemy_BattleState : EnemyState
     {
         base.Update();
 
-        if (stateTimer < 0 && !finishedShowingAlert)
-        {
-            enemy.ToggleEnemyDetectionAlert(false);
-            finishedShowingAlert = true;
-        }
-
         if (enemy.PlayerDetected())
             UpdateBattleTimer();
 
         if (BattleTimeIsOver())
+        {
+            enemy.EnableEnemyInCombat(false);
             stateMachine.ChangeState(enemy.IdleState);
+        }
 
         if (WithinAttackRange() && enemy.PlayerDetected())
             stateMachine.ChangeState(enemy.AttackState);
