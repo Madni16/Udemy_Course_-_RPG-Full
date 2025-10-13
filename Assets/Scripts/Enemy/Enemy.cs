@@ -9,6 +9,8 @@ public class Enemy : Entity
     public Enemy_DeadState DeadState;
     public Enemy_StunnedState StunnedState;
 
+    private Enemy_VFX vfx;
+
     [Header("Battle details")]
     public float battleMoveSpeed = 3f;
     public float attackDistance = 2f;
@@ -32,8 +34,18 @@ public class Enemy : Entity
     [SerializeField] private Transform playerCheck;
     [SerializeField] private float playerCheckDistance = 10f;
     public Transform player { get; private set; }
+    public float playerDetectionAlertDuration = 0.3f;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        vfx = GetComponent<Enemy_VFX>();
+    }
 
     public void EnableCounterWindow(bool enable) => canBeStunned = enable;
+
+    public void ToggleEnemyDetectionAlert(bool enable) => vfx.EnableEnemyAlert(enable);
 
     public override void EntityDeath()
     {
@@ -53,6 +65,7 @@ public class Enemy : Entity
             return;
 
         this.player = player;
+        ToggleEnemyDetectionAlert(true);
         stateMachine.ChangeState(BattleState);
     }
 

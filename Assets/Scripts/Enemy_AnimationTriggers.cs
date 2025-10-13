@@ -12,15 +12,7 @@ public class Enemy_AnimationTriggers : Entity_AnimationTriggers
         enemyVfx = GetComponentInParent<Enemy_VFX>();
     }
 
-    private void EnableCounterWindow()
-    {
-        enemyVfx.EnableEnemyAlert(true);
-        enemy.EnableCounterWindow(true);
-    }
+    private void EnableCounterWindow() => enemy.EnableCounterWindow(true);
 
-    private void DisableCounterWindow()
-    {
-        enemyVfx.EnableEnemyAlert(false);
-        enemy.EnableCounterWindow(false);
-    }
+    private void DisableCounterWindow() => enemy.EnableCounterWindow(false);
 }
