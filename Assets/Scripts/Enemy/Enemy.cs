@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : Entity
@@ -35,6 +36,8 @@ public class Enemy : Entity
     [SerializeField] private float playerCheckDistance = 10f;
     public Transform player { get; private set; }
     public float playerDetectionAlertDuration = 0.3f;
+    private bool inCombat = false;
+    private Coroutine showEnemyAlertCoroutine;
 
     protected override void Awake()
     {
@@ -45,7 +48,7 @@ public class Enemy : Entity
 
     public void EnableCounterWindow(bool enable) => canBeStunned = enable;
 
-    public void ToggleEnemyDetectionAlert(bool enable) => vfx.EnableEnemyAlert(enable);
+    public void EnableEnemyInCombat(bool enable) => inCombat = enable;
 
     public override void EntityDeath()
     {
@@ -65,7 +68,6 @@ public class Enemy : Entity
             return;
 
         this.player = player;
-        ToggleEnemyDetectionAlert(true);
         stateMachine.ChangeState(BattleState);
     }
 
@@ -86,6 +88,24 @@ public class Enemy : Entity
             return default;
 
         return hit;
+    }
+
+    public void ShowEnemyAlertDetection()
+    {
+        if (inCombat)
+            return;
+
+        inCombat = true;
+        showEnemyAlertCoroutine = StartCoroutine(ShowEnemyAlertCoroutine());
+    }
+
+    private IEnumerator ShowEnemyAlertCoroutine()
+    {
+        vfx.EnableEnemyAlert(true);
+
+        yield return new WaitForSeconds(playerDetectionAlertDuration);
+
+        vfx.EnableEnemyAlert(false);
     }
 
     protected override void OnDrawGizmos()
