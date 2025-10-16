@@ -21,11 +21,13 @@ public class Entity_Combat : MonoBehaviour
         {
             IDamageable damageable = target.GetComponent<IDamageable>();
 
-            if(damageable == null)
+            if (damageable == null)
                 continue;
 
-            damageable.TakeDamage(damage, transform);
-            vfx.CreateOnHitVFX(target.transform);
+            bool targetGotHit = damageable.TakeDamage(damage, transform);
+
+            if (targetGotHit)
+                vfx.CreateOnHitVFX(target.transform);
         }
     }
 
