@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 245414260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6369457, y: 1.649323, z: 3.8781824}
+  m_LocalPosition: {x: -4.4869466, y: 1.649323, z: 3.8781824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -672,7 +672,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6369457, y: 1.649323, z: 3.8781824}
+  m_LocalPosition: {x: -4.4869466, y: 1.649323, z: 3.8781824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43266,7 +43266,7 @@ Transform:
   m_GameObject: {fileID: 549754518}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.62, y: 0.32, z: 0}
+  m_LocalPosition: {x: -8.47, y: 0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43408,7 +43408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Stats
   maxHealth:
-    baseValue: 1000
+    baseValue: 10000
   major:
     strength:
       baseValue: 0
@@ -43417,14 +43417,16 @@ MonoBehaviour:
     intelligence:
       baseValue: 0
     vitality:
-      baseValue: 10
+      baseValue: 0
   offense:
     damage:
       baseValue: 10
     critPower:
-      baseValue: 250
+      baseValue: 0
     critChance:
-      baseValue: 60
+      baseValue: 0
+    armorPenetration:
+      baseValue: 0
     fireDamage:
       baseValue: 0
     iceDamage:
@@ -53325,7 +53327,7 @@ Transform:
   m_GameObject: {fileID: 1881161684}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.18, y: 0.32, z: 0}
+  m_LocalPosition: {x: -10.58, y: 0.3, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -53403,7 +53405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Stats
   maxHealth:
-    baseValue: 1000
+    baseValue: 10000
   major:
     strength:
       baseValue: 0
@@ -53419,6 +53421,8 @@ MonoBehaviour:
     critPower:
       baseValue: 0
     critChance:
+      baseValue: 0
+    armorPenetration:
       baseValue: 0
     fireDamage:
       baseValue: 0
