@@ -27,14 +27,31 @@ public class Entity_Stats : MonoBehaviour
         return finalDamage;
     }
 
-    public float GetMaxHealth()
+    public float GetArmorPenetration()
     {
-        float baseMaxHealth = maxHealth.GetValue();
-        float bonusMaxHealth = major.vitality.GetValue() * 5; // Each point of Vitality gives you 5 HP
+        // Total armor penetration as multiplier (e.g. 30 / 100 = 0.3f multiplier -- 30% armor penetration)
+        float finalPenetration = offense.armorPenetration.GetValue() / 100;
 
-        float finalMaxHealth = baseMaxHealth + bonusMaxHealth;
-        return finalMaxHealth;
+        return finalPenetration;
     }
+
+    public float GetArmorMitigation(float armorPenetration)
+    {
+        float baseArmor = defense.armor.GetValue();
+        float bonusArmor = major.vitality.GetValue(); // Each point of Vitality gives 1 armor.
+        float totalArmor = baseArmor + bonusArmor;
+
+        float penetrationMultiplier = Mathf.Clamp01(1 - armorPenetration); // e.g. 1 - .4f = .6f -- 60% of armor will be used for calculation.
+        float effectiveArmor = totalArmor * penetrationMultiplier;
+
+        float mitigation = effectiveArmor / (effectiveArmor + 100);
+        float mitigationCap = .85f; // Max mitigation will be capped at 85%
+
+        float finalMitigation = Mathf.Clamp(mitigation, 0, mitigationCap);
+
+        return finalMitigation;
+    }
+    
 
     public float GetEvasion()
     {
@@ -47,5 +64,13 @@ public class Entity_Stats : MonoBehaviour
         float finalEvasion = Mathf.Clamp(totalEvasion, 0, evasionCap);
 
         return finalEvasion;
+    }
+    public float GetMaxHealth()
+    {
+        float baseMaxHealth = maxHealth.GetValue();
+        float bonusMaxHealth = major.vitality.GetValue() * 5; // Each point of Vitality gives you 5 HP
+
+        float finalMaxHealth = baseMaxHealth + bonusMaxHealth;
+        return finalMaxHealth;
     }
 }
