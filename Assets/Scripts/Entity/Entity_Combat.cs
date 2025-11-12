@@ -1,4 +1,3 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Entity_Combat : MonoBehaviour
@@ -26,8 +25,9 @@ public class Entity_Combat : MonoBehaviour
             if (damageable == null)
                 continue;
 
+            float elementalDamage = stats.GetElementalDamage();
             float damage = stats.GetPhysicalDamage(out bool isCrit);
-            bool targetGotHit = damageable.TakeDamage(damage, transform);
+            bool targetGotHit = damageable.TakeDamage(damage, elementalDamage, transform);
 
             if (targetGotHit)
                 vfx.CreateOnHitVFX(target.transform, isCrit);
