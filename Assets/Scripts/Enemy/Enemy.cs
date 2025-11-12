@@ -46,6 +46,25 @@ public class Enemy : Entity
         vfx = GetComponent<Enemy_VFX>();
     }
 
+    protected override IEnumerator SlowDownEntityCoroutine(float duration, float slowMultiplier)
+    {
+        float originalMoveSpeed = moveSpeed;
+        float originalBattleMoveSpeed = battleMoveSpeed;
+        float originalAnimSpeed = anim.speed;
+
+        float speedMultiplier = 1 - slowMultiplier;
+
+        moveSpeed *= speedMultiplier;
+        battleMoveSpeed *= speedMultiplier;
+        anim.speed *= speedMultiplier;
+
+        yield return new WaitForSeconds(duration);
+
+        moveSpeed = originalMoveSpeed;
+        battleMoveSpeed = originalBattleMoveSpeed;
+        anim.speed = originalAnimSpeed;
+    }
+
     public void EnableCounterWindow(bool enable) => canBeStunned = enable;
 
     public void EnableEnemyInCombat(bool enable) => inCombat = enable;
