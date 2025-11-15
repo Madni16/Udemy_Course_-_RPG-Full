@@ -67,7 +67,7 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     private bool AttackEvaded() => Random.Range(0, 100) <= stats.GetEvasion();
 
-    protected void ReduceHealth(float damage)
+    public void ReduceHealth(float damage)
     {
         entityVfx?.PlayOnDamageVfx();
         currentHealth -= damage;
