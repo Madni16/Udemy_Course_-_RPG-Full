@@ -43379,6 +43379,7 @@ MonoBehaviour:
   hitVfx: {fileID: 2086080998961078021, guid: 857004e931ffb6f4cb8b19e27e22baca, type: 3}
   critHitVfx: {fileID: 4991228830686408256, guid: 9a6212b12db9acc4e80b02216809471c, type: 3}
   chillVfx: {r: 0, g: 0.6250279, b: 1, a: 1}
+  burnVfx: {r: 0.9622642, g: 0.40163857, b: 0.21484506, a: 1}
 --- !u!114 &549754526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43424,7 +43425,7 @@ MonoBehaviour:
       baseValue: 0
   offense:
     damage:
-      baseValue: 10
+      baseValue: 0
     critPower:
       baseValue: 0
     critChance:
@@ -43432,9 +43433,9 @@ MonoBehaviour:
     armorPenetration:
       baseValue: 0
     fireDamage:
-      baseValue: 0
+      baseValue: 100
     iceDamage:
-      baseValue: 50
+      baseValue: 0
     lightningDamage:
       baseValue: 0
   defense:
@@ -53211,6 +53212,7 @@ MonoBehaviour:
   hitVfx: {fileID: 0}
   critHitVfx: {fileID: 0}
   chillVfx: {r: 0, g: 1, b: 1, a: 1}
+  burnVfx: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1881161684
 GameObject:
   m_ObjectHideFlags: 0
@@ -53412,6 +53414,7 @@ MonoBehaviour:
   hitVfx: {fileID: 2086080998961078021, guid: 857004e931ffb6f4cb8b19e27e22baca, type: 3}
   critHitVfx: {fileID: 4991228830686408256, guid: 9a6212b12db9acc4e80b02216809471c, type: 3}
   chillVfx: {r: 0, g: 0.62352943, b: 1, a: 1}
+  burnVfx: {r: 0.9647059, g: 0.40392157, b: 0.21568628, a: 1}
   enemyAlert: {fileID: 1095749376}
 --- !u!114 &1881161692
 MonoBehaviour:
@@ -53426,7 +53429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Stats
   maxHealth:
-    baseValue: 10000
+    baseValue: 1000
   major:
     strength:
       baseValue: 0
