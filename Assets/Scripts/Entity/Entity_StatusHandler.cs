@@ -9,12 +9,60 @@ public class Entity_StatusHandler : MonoBehaviour
     private Entity_Health entityHealth;
     private ElementType currentEffect = ElementType.None;
 
+    [Header("Electrify effect details")]
+    [SerializeField] private GameObject lightningStrikeVfx;
+    [SerializeField] private float currentCharge;
+    [SerializeField] private float maximumCharge = 1;
+    private Coroutine electrifyCoroutine;
+
     private void Awake()
     {
         entity = GetComponent<Entity>();
         entityVfx = GetComponent<Entity_VFX>();
         entityStats = GetComponent<Entity_Stats>();
         entityHealth = GetComponent<Entity_Health>();
+    }
+
+    public void ApplyElectrifyEffect(float duration, float damage, float charge)
+    {
+        float lightningResistance = entityStats.GetElementalResistance(ElementType.Lightning);
+        float finalCharge = charge * (1 - lightningResistance);
+
+        currentCharge = currentCharge + finalCharge;
+
+        if (currentCharge >= maximumCharge)
+        {
+            TriggerLightningStrike(damage);
+            StopElectrifyEffect();
+            return;
+        }
+
+        if(electrifyCoroutine != null)
+            StopCoroutine(electrifyCoroutine);
+
+        electrifyCoroutine = StartCoroutine(ElectrifyEffectCoroutine(duration));
+    }
+
+    private void StopElectrifyEffect()
+    {
+        currentEffect = ElementType.None;
+        currentCharge = 0;
+        entityVfx.StopAllVfx();
+    }
+
+    private void TriggerLightningStrike(float damage)
+    {
+        Instantiate(lightningStrikeVfx, transform.position, Quaternion.identity);
+        entityHealth.ReduceHealth(damage);
+    }
+
+    private IEnumerator ElectrifyEffectCoroutine(float duration)
+    {
+        currentEffect = ElementType.Lightning;
+        entityVfx.PlayOnStatusVfx(duration, ElementType.Lightning);
+
+        yield return new WaitForSeconds(duration);
+        StopElectrifyEffect();
     }
 
     public void ApplyBurnEffect(float duration, float fireDamage)
@@ -46,15 +94,15 @@ public class Entity_StatusHandler : MonoBehaviour
         currentEffect = ElementType.None;
     }
 
-    public void ApplyChilledEffect(float duration, float slowMultiplier)
+    public void ApplyChillEffect(float duration, float slowMultiplier)
     {
         float iceResistance = entityStats.GetElementalResistance(ElementType.Ice);
         float finalDuration = duration * (1 - iceResistance);
 
-        StartCoroutine(ChilledEffectCoroutine(finalDuration, slowMultiplier));
+        StartCoroutine(ChillEffectCoroutine(finalDuration, slowMultiplier));
     }
 
-    private IEnumerator ChilledEffectCoroutine(float duration, float slowMultiplier)
+    private IEnumerator ChillEffectCoroutine(float duration, float slowMultiplier)
     {
         entity.SlowDownEntity(duration, slowMultiplier);
         currentEffect = ElementType.Ice;
@@ -66,6 +114,9 @@ public class Entity_StatusHandler : MonoBehaviour
 
     public bool CanBeApplied(ElementType element)
     {
+        if (element == ElementType.Lightning && currentEffect == ElementType.Lightning)
+            return true;
+
         return currentEffect == ElementType.None;
     }
 }
