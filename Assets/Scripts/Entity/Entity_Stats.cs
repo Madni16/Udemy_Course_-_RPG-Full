@@ -39,9 +39,9 @@ public class Entity_Stats : MonoBehaviour
         }
 
         // If an element is not highest damage, use 50% of the damage and add to the total damage.
-        float bonusFire = (fireDamage == highestDamage) ? 0 : fireDamage * .5f;
-        float bonusIce = (iceDamage == highestDamage) ? 0 : iceDamage * .5f;
-        float bonusLightning = (lightningDamage == highestDamage) ? 0 : lightningDamage * .5f;
+        float bonusFire = (element == ElementType.Fire) ? 0 : fireDamage * .5f;
+        float bonusIce = (element == ElementType.Ice) ? 0 : iceDamage * .5f;
+        float bonusLightning = (element == ElementType.Lightning) ? 0 : lightningDamage * .5f;
 
         float weakerElementsDamage = bonusFire + bonusIce + bonusLightning;
         float finalDamage = highestDamage + weakerElementsDamage + bonusElementalDamage;
