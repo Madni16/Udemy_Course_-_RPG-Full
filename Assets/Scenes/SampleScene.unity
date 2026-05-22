@@ -43356,6 +43356,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Health
   currentHealth: 0
   isDead: 0
+  regenInterval: 1
+  canRegenerateHealth: 1
   knockbackPower: {x: 1.5, y: 2.5}
   heavyKnockbackPower: {x: 7, y: 7}
   knockbackDuration: 0.2
@@ -43416,8 +43418,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52d289815876c74893e6475e6e27fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Stats
-  maxHealth:
-    baseValue: 10000
+  resources:
+    maxHealth:
+      baseValue: 1000
+    healthRegen:
+      baseValue: 40
   major:
     strength:
       baseValue: 0
@@ -43428,6 +43433,8 @@ MonoBehaviour:
     vitality:
       baseValue: 0
   offense:
+    attackSpeed:
+      baseValue: 1
     damage:
       baseValue: 0
     critPower:
@@ -53402,6 +53409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Health
   currentHealth: 0
   isDead: 0
+  regenInterval: 1
+  canRegenerateHealth: 1
   knockbackPower: {x: 1.5, y: 2.5}
   heavyKnockbackPower: {x: 7, y: 7}
   knockbackDuration: 0.2
@@ -53440,8 +53449,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52d289815876c74893e6475e6e27fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Stats
-  maxHealth:
-    baseValue: 1000
+  resources:
+    maxHealth:
+      baseValue: 1000
+    healthRegen:
+      baseValue: 0
   major:
     strength:
       baseValue: 0
@@ -53452,8 +53464,10 @@ MonoBehaviour:
     vitality:
       baseValue: 0
   offense:
+    attackSpeed:
+      baseValue: 1
     damage:
-      baseValue: 10
+      baseValue: 150
     critPower:
       baseValue: 0
     critChance:
