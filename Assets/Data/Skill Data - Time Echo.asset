@@ -13,14 +13,26 @@ MonoBehaviour:
   m_Name: Skill Data - Time Echo
   m_EditorClassIdentifier: Assembly-CSharp::Skill_DataSO
   cost: 1
-  displayName: Time Echo
-  description: 'Create a Time Echo of yourself.
-
-    The Echo will distract enemies.'
-  costRequirements: 'Requirements:
-
-    - 1 Skill Point.'
-  costRequirementsPlural: 'Requirements:
-
-    - {0} Skill Points.'
+  inEditorName: Time Echo
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:a6a0276b1aa914b4eaacf66f195220df
+    m_TableEntryReference:
+      m_KeyId: 62963863552
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:a6a0276b1aa914b4eaacf66f195220df
+    m_TableEntryReference:
+      m_KeyId: 5028134801408
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: -1069313822, guid: dbfc2440eaf6f6942833a5fd08714ce0, type: 3}
+  references:
+    version: 2
+    RefIds: []
