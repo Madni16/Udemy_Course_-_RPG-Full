@@ -9,5 +9,9 @@ public class Skill_DataSO : ScriptableObject
     public string displayName;
     [TextArea]
     public string description;
+    [TextArea]
+    public string costRequirements;
+    [TextArea]
+    public string costRequirementsPlural;
     public Sprite icon;
 }
