@@ -17,4 +17,10 @@ MonoBehaviour:
   description: 'Create a Time Echo of yourself.
 
     The Echo will distract enemies.'
+  costRequirements: 'Requirements:
+
+    - 1 Skill Point.'
+  costRequirementsPlural: 'Requirements:
+
+    - {0} Skill Points.'
   icon: {fileID: -1069313822, guid: dbfc2440eaf6f6942833a5fd08714ce0, type: 3}
