@@ -5,7 +5,7 @@ public class UI_ToolTip : MonoBehaviour
     private RectTransform tooltipRect;
     private Vector2 offset;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         tooltipRect = GetComponent<RectTransform>();
     }
