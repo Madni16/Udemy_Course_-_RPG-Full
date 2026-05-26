@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a1c9c338b38a634cbe88746993f9a01, type: 3}
-  m_Name: Skill Data - Cleanse
+  m_Name: Skill Data - Quick Dash
   m_EditorClassIdentifier: Assembly-CSharp::Skill_DataSO
   cost: 0
-  inEditorName: 
+  inEditorName: Quick Dash
   displayName:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:a6a0276b1aa914b4eaacf66f195220df
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 642678751514624
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   description:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:a6a0276b1aa914b4eaacf66f195220df
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 642917143171072
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 0}
+  icon: {fileID: -1268430607, guid: dbfc2440eaf6f6942833a5fd08714ce0, type: 3}
   references:
     version: 2
     RefIds: []

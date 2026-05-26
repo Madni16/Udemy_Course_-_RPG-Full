@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1c9c338b38a634cbe88746993f9a01, type: 3}
+  m_Name: Skill Data - Deja Vu
+  m_EditorClassIdentifier: Assembly-CSharp::Skill_DataSO
+  cost: 3
+  skillType: 0
+  upgradeType: 2
+  inEditorName: Deju Vu
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:a6a0276b1aa914b4eaacf66f195220df
+    m_TableEntryReference:
+      m_KeyId: 646353288974336
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:a6a0276b1aa914b4eaacf66f195220df
+    m_TableEntryReference:
+      m_KeyId: 646504741097472
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: 1612237288, guid: dbfc2440eaf6f6942833a5fd08714ce0, type: 3}
+  references:
+    version: 2
+    RefIds: []

@@ -44,7 +44,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10832615329792
-    m_Key: skill_points
+    m_Key: skill_cost_text
     m_Metadata:
       m_Items: []
   - m_Id: 30062941327360
@@ -53,6 +53,62 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 35472238727168
     m_Key: locked_skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 597578642116608
+    m_Key: cleanse_display_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 598631206899712
+    m_Key: cleanse_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 599290018811904
+    m_Key: quick_thinking_display_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 599766001012736
+    m_Key: quick_thinking_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642678751514624
+    m_Key: quick_dash_display_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642917143171072
+    m_Key: quick_dash_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 643901017837568
+    m_Key: echo_step_display_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 644023281799168
+    m_Key: echo_step_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646353288974336
+    m_Key: deja_vu_display_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646504741097472
+    m_Key: deju_vu_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647539463311360
+    m_Key: time_lost_shard_display_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647686700158976
+    m_Key: time_lost_shard_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 648191543365632
+    m_Key: found_fragment_display_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 648303153795072
+    m_Key: found_fragment_description
     m_Metadata:
       m_Items: []
   m_Metadata:
