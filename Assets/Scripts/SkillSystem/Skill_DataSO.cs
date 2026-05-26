@@ -5,6 +5,8 @@ using UnityEngine.Localization;
 public class Skill_DataSO : ScriptableObject
 {
     public int cost;
+    public SkillType skillType;
+    public SkillUpgradeType upgradeType;
     public string inEditorName;
 
     [Header("Skill description")]

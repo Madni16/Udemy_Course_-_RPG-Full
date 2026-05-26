@@ -50,7 +50,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10832615329792
-    m_Localized: '{0:plural:(FR) Skill Point|(FR) Skill Points}'
+    m_Localized: '- {0} {0:plural:(FR) Skill Point|(FR) Skill Points}'
     m_Metadata:
       m_Items:
       - rid: 8822043155402850617
@@ -60,6 +60,79 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 35472238727168
     m_Localized: (FR) You've taken a different path - this skill is now locked.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 597578642116608
+    m_Localized: (FR) Cleanse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 598631206899712
+    m_Localized: (FR) Healing Wisp additionally reduces the duration of negative
+      status effects by 1 second.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 599290018811904
+    m_Localized: (FR) Quick Thinking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 599766001012736
+    m_Localized: (FR) Healing Wisp additionaly reduces the cooldowns of your other
+      skills by 1 second.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642678751514624
+    m_Localized: (FR) Quick Dash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642917143171072
+    m_Localized: '(FR) Dash to avoid attacks.
+
+      You cannot take damage while
+      dashing.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 643901017837568
+    m_Localized: (FR) Echo Step
+    m_Metadata:
+      m_Items: []
+  - m_Id: 644023281799168
+    m_Localized: '(FR) Leave a Time Echo behind when performing Quick Dash.
+
+      This
+      Time Echo inherits all of its upgrades.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646353288974336
+    m_Localized: (FR) Deja Vu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646504741097472
+    m_Localized: '(FR) Create a Time Echo on arrival when performing Quick Dash.
+
+      This
+      Time Echo inherits all of its upgrades.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647539463311360
+    m_Localized: (FR) Time Lost Shard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647686700158976
+    m_Localized: '(FR) Leave a Time Shard behind when performing Quick Dash.
+
+      This
+      Time Shard inherits all of its upgrades.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 648191543365632
+    m_Localized: (FR) Found Fragment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 648303153795072
+    m_Localized: '(FR) Create a Time Shard on arrival when performing Quick Dash.
+
+      This
+      Time Shard inherits all of its upgrades.'
     m_Metadata:
       m_Items: []
   references:
